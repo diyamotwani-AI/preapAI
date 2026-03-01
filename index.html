@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrepAI | AI-Powered Exam Success</title>
+    <meta name="description"
+        content="Generate personalized study timetables, topic breakdowns, and revision schedules with PrepAI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">Prep<span>AI</span></div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#generator">Generator</a>
+                <a href="login.html" id="nav-signin" class="btn-signin">Sign In</a>
+                <div id="user-profile" class="hidden user-pill">
+                    <span id="user-display-email"></span>
+                    <button id="logout-btn" class="logout-link">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero container">
+            <div class="hero-text">
+                <h1 class="gradient-text">Conquer Your Exams with Intelligence.</h1>
+                <p>PrepAI uses advanced algorithms to build your perfect study roadmap. Enter your details and let AI
+                    handle the planning.</p>
+                <div class="hero-cta">
+                    <a href="#generator" class="btn-primary-large">Start Planning Now</a>
+                    <a href="#features" class="btn-secondary-large">How it works</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="ai-orbit">
+                    <div class="floating-node node-1"></div>
+                    <div class="floating-node node-2"></div>
+                    <div class="floating-node node-3"></div>
+                </div>
+                <div class="ai-core"></div>
+                <div class="glass-card main-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">AI Optimization</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card pulse-card">
+                    <div class="ai-icon">✨</div>
+                    <p>AI Engine Active</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="trust-section">
+            <div class="container">
+                <p class="trust-label">Empowering students from</p>
+                <div class="logo-cloud">
+                    <span>Stanford</span>
+                    <span>MIT</span>
+                    <span>Cambridge</span>
+                    <span>Harvard</span>
+                    <span>ETH Zurich</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Engineered for Success</h2>
+                    <p>Stop guessing, start studying with data-backed strategies.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon">📅</div>
+                        <h3>Dynamic Scheduling</h3>
+                        <p>Our AI analyzes your subjects and adjusts the intensity based on your target exam date.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>Adaptive Learning</h3>
+                        <p>Topic breakdowns prioritized by difficulty and exam weightage to maximize score.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3>Revision Cycles</h3>
+                        <p>Built-in spaced repetition intervals ensures you never forget what you've learned.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="generator" class="generator container">
+            <div class="section-header">
+                <h2>Create Your Personalized Plan</h2>
+                <p>Fill in the details below to generate your AI-optimized schedule.</p>
+            </div>
+
+            <div class="generator-grid">
+                <div class="input-card glass-card">
+                    <form id="prep-form">
+                        <div class="form-group">
+                            <label for="subjects">Subjects</label>
+                            <input type="text" id="subjects" placeholder="e.g. Mathematics, Physics, Chemistry"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="exam-date">Target Exam Date</label>
+                                <input type="date" id="exam-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="difficulty">Difficulty Level</label>
+                                <select id="difficulty">
+                                    <option value="beginner">Beginner (Focused Fundamentals)</option>
+                                    <option value="intermediate" selected>Intermediate (Balanced)</option>
+                                    <option value="advanced">Advanced (Intensive Prep)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="study-hours">Daily Study Hours</label>
+                                <input type="number" id="study-hours" value="8" min="1" max="24" required>
+                                <p id="sustainability-warning" class="warning-msg hidden">⚠️ Sustainable plan
+                                    recommended. Consider 6–7 hours.</p>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-generate">
+                            <span>Generate Study Plan</span>
+                            <div class="sparkle"></div>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="output-preview glass-card" id="output-container">
+                    <div class="placeholder-content">
+                        <div class="icon-pulse">🎯</div>
+                        <h3>Your plan will appear here</h3>
+                        <p>Complete the form to see your AI-generated timetable.</p>
+                    </div>
+
+                    <div id="result-display" class="hidden">
+                        <div class="progress-section glass-card">
+                            <div class="stats-grid">
+                                <div class="stat-pill">
+                                    <span class="pill-label">🗓️ Days Left</span>
+                                    <span id="stat-days-left" class="pill-value">0</span>
+                                </div>
+                                <div class="stat-pill">
+                                    <span class="pill-label">⏳ Total Hours</span>
+                                    <span id="stat-total-hours" class="pill-value">0h</span>
+                                </div>
+                                <div class="stat-pill">
+                                    <span class="pill-label">✅ Completed</span>
+                                    <span id="stat-completed-hours" class="pill-value">0h</span>
+                                </div>
+                                <div class="stat-pill">
+                                    <span class="pill-label">🎯 Remaining</span>
+                                    <span id="stat-remaining-hours" class="pill-value">0h</span>
+                                </div>
+                            </div>
+
+                            <div class="progress-info">
+                                <h3>Day Progress</h3>
+                                <span id="progress-text">0% Completed</span>
+                            </div>
+                            <div class="progress-bar-large">
+                                <div id="dashboard-progress-fill" class="progress-fill" style="width: 0%;"></div>
+                            </div>
+                            <div class="completion-toggle">
+                                <label class="check-container">
+                                    <input type="checkbox" id="daily-complete">
+                                    <span class="checkmark"></span>
+                                    Completed today's study
+                                </label>
+                            </div>
+                        </div>
+
+                        <div id="ai-insight-card" class="ai-insight hidden">
+                            <div class="insight-content">
+                                <span class="insight-icon">🧠</span>
+                                <div class="insight-text">
+                                    <h4>AI Insight</h4>
+                                    <p id="ai-insight-msg">Analyzing your study patterns...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="confidence-section" class="hidden">
+                            <p class="confidence-label">How confident are you? (1–5)</p>
+                            <div class="rating-group">
+                                <button class="rating-btn" data-value="1">1</button>
+                                <button class="rating-btn" data-value="2">2</button>
+                                <button class="rating-btn" data-value="3">3</button>
+                                <button class="rating-btn" data-value="4">4</button>
+                                <button class="rating-btn" data-value="5">5</button>
+                            </div>
+                            <p id="adaptive-msg" class="hidden"></p>
+                        </div>
+                    </div>
+
+                    <div class="result-header">
+                        <div class="tab-triggers">
+                            <button class="tab-btn active" data-tab="timetable">Timetable</button>
+                            <button class="tab-btn" data-tab="topics">Topics</button>
+                            <button class="tab-btn" data-tab="revision">Revision</button>
+                        </div>
+                        <div class="button-group">
+                            <button id="share-plan-btn" class="btn-primary-small">
+                                <span>🔗 Share</span>
+                            </button>
+                            <button id="save-plan-btn" class="btn-primary-small">
+                                <span>💾 Save Plan</span>
+                            </button>
+                            <button id="download-btn" class="btn-secondary">
+                                <span>📄 PDF</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="timetable-pane">
+                        <!-- Injected by JS -->
+                    </div>
+                    <div class="tab-content hidden" id="topics-pane">
+                        <!-- Injected by JS -->
+                    </div>
+                    <div class="tab-content hidden" id="revision-pane">
+                        <!-- Injected by JS -->
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials container">
+            <div class="section-header">
+                <h2>Trusted by Top Scorers</h2>
+                <p>Real stories from students who mastered their exams with PrepAI.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card glass-card">
+                    <p>"PrepAI changed how I study for my medical boards. The revision schedule was a lifesaver!"</p>
+                    <div class="user-info">
+                        <div class="user-avatar">SC</div>
+                        <div>
+                            <h4>Sarah Chen</h4>
+                            <span>Final Year Med Student</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card">
+                    <p>"I used to spend hours planning, but PrepAI does it in seconds. Highly recommended for
+                        engineering students."</p>
+                    <div class="user-info">
+                        <div class="user-avatar">JK</div>
+                        <div>
+                            <h4>James Knight</h4>
+                            <span>MIT Sophomore</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq container">
+            <div class="section-header">
+                <h2>Got Questions?</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item glass-card">
+                    <h3>How does the AI create my schedule?</h3>
+                    <p>Our algorithm uses spaced repetition and your exam proximity to prioritize high-yield topics.</p>
+                </div>
+                <div class="faq-item glass-card">
+                    <h3>Can I adjust the timetable after it's generated?</h3>
+                    <p>Yes, you can re-generate with different subjects or difficulty levels at any time.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo">Prep<span>AI</span></div>
+                <p>© 2026 PrepAI. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

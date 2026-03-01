@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | PrepAI - Master Your Exams</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="auth-page">
+    <div class="auth-nav">
+        <a href="index.html" class="logo">Prep<span>AI</span></a>
+    </div>
+
+    <main class="auth-container">
+        <div class="auth-card glass-card">
+            <div class="auth-header">
+                <h1>Welcome Back</h1>
+                <p>Continue your journey to academic excellence.</p>
+            </div>
+
+            <form id="login-form" class="auth-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="name@university.edu" required>
+                </div>
+                <div class="form-group">
+                    <div class="label-row">
+                        <label for="password">Password</label>
+                        <a href="#" class="forgot-link">Forgot?</a>
+                    </div>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="btn-auth-primary">Sign In</button>
+
+                <div class="divider">
+                    <span>or</span>
+                </div>
+
+                <button type="button" id="demo-btn" class="btn-auth-secondary">
+                    <span>Try Demo Account</span>
+                    <i class="icon">✨</i>
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Don't have an account? <a href="signup.html">Create Account</a></p>
+            </div>
+        </div>
+    </main>
+
+    <div class="bg-glow"></div>
+
+    <script src="auth.js"></script>
+</body>
+
+</html>
